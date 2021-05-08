@@ -23,6 +23,7 @@ console.log ("jokes aplenty");
 
 const buttonClick = document.querySelector("#joke-button");
 let jokeText = document.querySelector("#joke-text");
+const drumroll = document.getElementById("drum-roll")
 
 async function getJoke (){
     const response = await fetch ("https://icanhazdadjoke.com/", {
@@ -32,7 +33,11 @@ async function getJoke (){
         jokeText.innerHTML = joke.joke;
         console.log (jokeText);
     }
-    
-buttonClick.addEventListener('click', getJoke);
+
+function playAudio() {
+    drumroll.play();
+}
+
+buttonClick.addEventListener('click', getJoke, playAudio);
 
 
