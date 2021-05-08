@@ -1,3 +1,10 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
+section {
+    display:flex;
+    width: 100%;
+    flex-direction: columns;
+    margin: 20;
+    padding: 20;
+}

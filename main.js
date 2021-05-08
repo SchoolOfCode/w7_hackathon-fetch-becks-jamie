@@ -1,6 +1,5 @@
 console.log ("jokes aplenty");
 
-
 // create button
 // on click 
 // - fetch request
@@ -22,10 +21,18 @@ console.log ("jokes aplenty");
 //   x.pause();
 // }
 
+const buttonClick = document.querySelector("#joke-button");
+let jokeText = document.querySelector("#joke-text");
+
 async function getJoke (){
     const response = await fetch ("https://icanhazdadjoke.com/", {
-  headers: { accept: "application/json" },});
-  let joke = await response.json();
-  console.log (joke);
-}
+        headers: { accept: "application/json" },});
+        let joke = await response.json();
+        console.log (joke);
+        jokeText.innerHTML = joke.joke;
+        console.log (jokeText);
+    }
+    
+buttonClick.addEventListener('click', getJoke);
+
 
