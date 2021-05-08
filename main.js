@@ -29,15 +29,14 @@ async function getJoke (){
     const response = await fetch ("https://icanhazdadjoke.com/", {
         headers: { accept: "application/json" },});
         let joke = await response.json();
-        console.log (joke);
-        jokeText.innerHTML = joke.joke;
-        console.log (jokeText);
+        setTimeout(() => {jokeText.innerHTML = joke.joke},4000);
+        playAudio();
     }
 
 function playAudio() {
     drumroll.play();
 }
 
-buttonClick.addEventListener('click', getJoke, playAudio);
+buttonClick.addEventListener('click', getJoke);
 
 
